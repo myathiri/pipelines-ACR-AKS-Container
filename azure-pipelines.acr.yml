@@ -49,7 +49,7 @@ steps:
 
 - script: |
     docker build -f Dockerfile -t $(dockerId).azurecr.io/$(imageName) .
-    docker login -u 4f833744-40c9-4f82-8d1d-855fea717ba0 $(dockerId) -p $pswd $(dockerId).azurecr.io
+    docker login -u 4f833744-40c9-4f82-8d1d-855fea717ba0 -p $pswd $(dockerId).azurecr.io
     docker push $(dockerId).azurecr.io/$(imageName)
   env:
     pswd: $(dockerPassword)
